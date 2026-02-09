@@ -15,7 +15,7 @@ const Projects = () => {
       <h1 className="font-bold text-3xl mb-5">Our projects</h1>
       <div className="relative w-full ">
         <div className="relative bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-2xl border border-white/10">
-          <div className="space-x-5 px-5 mb-3">
+          <div className="space-x-5 space-y-5 px-5 mb-3">
             <button
               onClick={() => setactiveTab("All")}
               className={`px-3 py-2 backdrop-blur-sm text-xs sm:text-sm rounded-t-lg border
@@ -73,7 +73,7 @@ const Projects = () => {
           <div className="bg-linear-to-br from-gray-900/20 to-gray-800/20 backdrop-blur-sm rounded-lg overflow-hidden h-full w-full border border-white/5">
             {/* projescts show case */}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 max-h-screen overflow-auto">
               {projectdata.map((project) => (
                 <div
                   key={project.id}

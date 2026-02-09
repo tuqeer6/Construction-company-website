@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <div className="relative min-h-screen flex justify-center pt-16 sm:pt-20 px-4 sm:px-6 lg:px-6 overflow-hidden flex-col gap-12 min-[930px]:flex-row">
       <div className="absolute top-20 left-4 sm:left-10 w-48 sm:w-72 h-48 sm:h72 bg-[#3da254]/20 rounded full blur-3xl animate-pulse" />
-      <div className=" min-[930px]:w-1/2 flex flex-col items-center justify-center px-15 space-y-10 ">
+      <div className=" min-[930px]:w-1/2 flex flex-col items-center justify-center px-5 min-[930px]:px-15 space-y-10 ">
         <h1 className="font-bold text-3xl">
           From Concept to Construction — We Build It Right
         </h1>

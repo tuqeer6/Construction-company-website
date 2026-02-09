@@ -1,6 +1,8 @@
 import t1 from "../assets/t1.jpg";
 import t2 from "../assets/t2.jpg";
 import t3 from "../assets/t3.jpg";
+import CountUp from "react-countup";
+
 const testimonials = [
   {
     name: "Ali Khan",
@@ -42,6 +44,34 @@ const Testimonials = () => {
               strive to deliver exceptional quality, aesthetics, and professionalism
               in every project.
             </p>
+
+            {/* Animated Stats */}
+            <div className="mt-10 md:mt-30 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center lg:text-left">
+              {/* Projects */}
+              <div className="stat-card delay-0">
+                <h3 className="text-4xl font-bold text-green-400">
+                  <CountUp end={1000} duration={2} suffix="+" />
+                </h3>
+                <div className="stat-line"></div>
+                <p className="text-gray-300 mt-1">Projects Completed</p>
+              </div>
+              {/* Clients */}
+              <div className="stat-card delay-200">
+                <h3 className="text-4xl font-bold text-green-400">
+                  <CountUp end={900} duration={2} suffix="+" />
+                </h3>
+                <div className="stat-line"></div>
+                <p className="text-gray-300 mt-1">Satisfied Customers</p>
+              </div>
+              {/* Experience */}
+              <div className="stat-card delay-400">
+                <h3 className="text-4xl font-bold text-green-400">
+                  <CountUp end={40} duration={2} suffix="+" />
+                </h3>
+                <div className="stat-line"></div>
+                <p className="text-gray-300 mt-1">Years Experience</p>
+              </div>
+            </div>
           </div>
 
           {/* Right side testimonials */}
@@ -49,7 +79,7 @@ const Testimonials = () => {
             {testimonials.map((testi, key) => (
               <div
                 key={key}
-                className="bg-white/5 p-6 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl shadow-lg"
+                className="testimonial-card bg-white/5 p-6 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl shadow-lg"
               >
                 <div className="flex items-start gap-4 sm:gap-6">
                   <div className="shrink-0 text-4xl font-bold bg-linear-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">
@@ -64,7 +94,9 @@ const Testimonials = () => {
                         className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-green-400"
                       />
                       <div>
-                        <h3 className="font-semibold">{testi.name}</h3>
+                        <h3 className="font-semibold text-green-400 hover:text-cyan-400 transition-all duration-300">
+                          {testi.name}
+                        </h3>
                         <h4 className="text-gray-400 text-sm">{testi.role}</h4>
                       </div>
                     </div>
