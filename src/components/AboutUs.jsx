@@ -16,7 +16,7 @@ const AboutUs = () => {
             At <strong className="text-green-200">M/s Pir Badshah & Co</strong>,
             we are dedicated to transforming ideas into reality through
             innovative construction and design solutions. With over{" "}
-            <strong className="text-green-200">25 years</strong> of experience
+            <strong className="text-green-200">40+ years</strong> of experience
             in the construction industry, we specialize in a comprehensive range
             of services including construction management, architecture design,
             renovation services, and interior designing. Our mission is to

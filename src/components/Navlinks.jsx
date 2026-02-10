@@ -15,7 +15,7 @@ const Navlinks = () => {
             <a href="#ourProjects">Our Projects</a>
           </li>
           <li className="hover:text-emerald-700 font-semibold">
-            <a href="#CC">Cost Calculator</a>
+            <a href="#cost">Cost Calculator</a>
           </li>
           <li className="hover:text-emerald-700 font-semibold">
             <a href="#AboutUs">About Us</a>

@@ -2,6 +2,7 @@
 import AboutUs from './components/AboutUs'
 import CEOMessage from './components/CEOMessage'
 import ContactUS from './components/ContactUS'
+import CostCalculator from './components/CostCalculator'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -10,12 +11,14 @@ import Testimonials from './components/Testimonials'
 
 const App = () => {
   return (
-    <div className='min-h-screen bg-emerald-900 text-white overflow-hidden'>
+    <div className=' bg-emerald-900 text-white overflow-hidden'>
       <Header/>
       <Hero/>
       <Projects/>
       <AboutUs/>
+       <CostCalculator/>
       <CEOMessage/>
+     
       <Testimonials/>
       <ContactUS/>
       <Footer/>
