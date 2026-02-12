@@ -8,9 +8,11 @@ import {
   Ruler,
   ShieldCheck,
 } from "lucide-react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useParams } from "react-router-dom";
+
 
 const ConstructionService = () => {
+     const { serviceType } = useParams();
   // Ensure the user starts at the top of the page
   useEffect(() => {
     window.scrollTo(0, 0);

@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
  */
 const ServiceCard = ({ service }) => {
   const Icon = service.icon;
+  const isConstruction = service.category === "construction";
 
   return (
     <div className="group flex-1 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl transition-all duration-500 hover:shadow-green-500/10 hover:border-green-500/30">
@@ -25,12 +26,21 @@ const ServiceCard = ({ service }) => {
         {service.description}
       </p>
 
-      <Link
-        to="/services/construction"
-        className="relative overflow-hidden px-6 py-2.5 rounded-full bg-green-600 text-white text-sm font-medium transition-all hover:bg-green-500 hover:shadow-lg hover:shadow-green-500/20 active:scale-95 inline-block"
-      >
-        Explore Service
-      </Link>
+      {isConstruction ? (
+        <Link
+          to="/services/construction"
+          className="relative overflow-hidden px-6 py-2.5 rounded-full bg-green-600 text-white text-sm font-medium transition-all hover:bg-green-500 hover:shadow-lg hover:shadow-green-500/20 active:scale-95 inline-block"
+        >
+          Explore Service
+        </Link>
+      ) : (
+        <button
+          type="button"
+          className="relative overflow-hidden px-6 py-2.5 rounded-full bg-green-600/60 text-white text-sm font-medium cursor-default inline-block"
+        >
+          Explore Service
+        </button>
+      )}
     </div>
   );
 };
