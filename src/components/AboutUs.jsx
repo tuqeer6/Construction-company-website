@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { aboutUsData } from "../data/projectsData";
+import { Link } from "react-router-dom";
 
 /**
  * ServiceCard Sub-component
  */
 const ServiceCard = ({ service }) => {
   const Icon = service.icon;
-  
+
   return (
     <div className="group flex-1 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl transition-all duration-500 hover:shadow-green-500/10 hover:border-green-500/30">
       <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-green-500/10 border border-green-500/20 mb-6 transition-colors group-hover:bg-green-500/20">
@@ -24,9 +25,12 @@ const ServiceCard = ({ service }) => {
         {service.description}
       </p>
 
-      <button className="relative overflow-hidden px-6 py-2.5 rounded-full bg-green-600 text-white text-sm font-medium transition-all hover:bg-green-500 hover:shadow-lg hover:shadow-green-500/20 active:scale-95">
+      <Link
+        to="/services/construction"
+        className="relative overflow-hidden px-6 py-2.5 rounded-full bg-green-600 text-white text-sm font-medium transition-all hover:bg-green-500 hover:shadow-lg hover:shadow-green-500/20 active:scale-95 inline-block"
+      >
         Explore Service
-      </button>
+      </Link>
     </div>
   );
 };
@@ -47,8 +51,9 @@ const AboutUs = () => {
   // 1. Prepare original data chunks
   const originalChunks = useMemo(() => {
     const perView = isDesktop ? 2 : 1;
-    return Array.from({ length: Math.ceil(aboutUsData.length / perView) }, (_, i) =>
-      aboutUsData.slice(i * perView, i * perView + perView)
+    return Array.from(
+      { length: Math.ceil(aboutUsData.length / perView) },
+      (_, i) => aboutUsData.slice(i * perView, i * perView + perView),
     );
   }, [isDesktop]);
 
@@ -85,12 +90,14 @@ const AboutUs = () => {
   };
 
   return (
-    <section id="AboutUs" className="relative min-h-screen flex items-center overflow-hidden py-24 px-6 lg:px-20">
+    <section
+      id="AboutUs"
+      className="relative min-h-screen flex items-center overflow-hidden py-24 px-6 lg:px-20"
+    >
       {/* Background Subtle Glow */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-green-900/10 blur-[120px] rounded-full" />
-      
+
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        
         {/* TOP HEADER */}
         <header className="mb-16 text-center ">
           <h2 className="text-sm uppercase tracking-[0.3em] text-green-500 font-semibold mb-3">
@@ -102,28 +109,36 @@ const AboutUs = () => {
         </header>
 
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-          
           {/* CONTENT SIDE (Your Updated Text) */}
           <div className="lg:w-2/5 space-y-6 text-center lg:text-left">
             <h2 className="text-3xl font-bold text-white leading-tight">
-              Decades of <span className="text-green-500">Excellence</span> in Construction
+              Decades of <span className="text-green-500">Excellence</span> in
+              Construction
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed">
-              At <span className="text-white font-medium">M/s Pir Badshah & Co</span>, 
-              we bridge the gap between architectural vision and structural reality. 
-              With over <span className="text-green-400 font-semibold">40+ years</span> of 
-              industry-leading experience, we specialize in high-precision engineering 
-              and sustainable infrastructure.
+              At{" "}
+              <span className="text-white font-medium">
+                M/s Pir Badshah & Co
+              </span>
+              , we bridge the gap between architectural vision and structural
+              reality. With over{" "}
+              <span className="text-green-400 font-semibold">40+ years</span> of
+              industry-leading experience, we specialize in high-precision
+              engineering and sustainable infrastructure.
             </p>
             <div className="pt-4 flex flex-wrap gap-6 justify-center lg:justify-start">
               <div className="text-center">
                 <p className="text-2xl font-bold text-white">40+</p>
-                <p className="text-xs text-gray-500 uppercase tracking-widest">Years Experience</p>
+                <p className="text-xs text-gray-500 uppercase tracking-widest">
+                  Years Experience
+                </p>
               </div>
               <div className="w-px h-10 bg-white/10 hidden sm:block" />
               <div className="text-center">
                 <p className="text-2xl font-bold text-white">1000+</p>
-                <p className="text-xs text-gray-500 uppercase tracking-widest">Projects Done</p>
+                <p className="text-xs text-gray-500 uppercase tracking-widest">
+                  Projects Done
+                </p>
               </div>
             </div>
           </div>
@@ -145,7 +160,9 @@ const AboutUs = () => {
                         <ServiceCard key={service.id} service={service} />
                       ))}
                       {/* Flex padding for uneven cards */}
-                      {isDesktop && slide.length < 2 && <div className="flex-1" />}
+                      {isDesktop && slide.length < 2 && (
+                        <div className="flex-1" />
+                      )}
                     </div>
                   ))}
                 </div>
@@ -157,9 +174,10 @@ const AboutUs = () => {
                 <div className="flex gap-2">
                   {originalChunks.map((_, i) => {
                     // Logic to highlight the correct dot during cloning
-                    const isActive = current === i + 1 || 
-                                    (current === 0 && i === originalChunks.length - 1) ||
-                                    (current === pagedData.length - 1 && i === 0);
+                    const isActive =
+                      current === i + 1 ||
+                      (current === 0 && i === originalChunks.length - 1) ||
+                      (current === pagedData.length - 1 && i === 0);
                     return (
                       <button
                         key={i}
@@ -192,7 +210,6 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
