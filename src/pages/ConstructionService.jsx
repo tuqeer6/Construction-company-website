@@ -44,8 +44,8 @@ const ConstructionService = () => {
   return (
     <section className="min-h-screen text-white pb-20 pt-32 px-6 lg:px-20 relative overflow-hidden">
       {/* Background Decorative Elements */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-500/5 blur-[120px] rounded-full -z-0" />
-      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-green-500/5 blur-[100px] rounded-full -z-0" />
+      <div className="absolute top-0 right-0 w-125 h-125 bg-green-500/5 blur-[120px] rounded-full z-0" />
+      <div className="absolute bottom-0 left-0 w-75 h-75 bg-green-500/5 blur-[100px] rounded-full z-0" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Back Button */}
@@ -176,7 +176,7 @@ const ConstructionService = () => {
         </div>
 
         {/* Final CTA */}
-        <div className="mt-24 p-12 rounded-[3rem] bg-gradient-to-r from-green-900/20 to-transparent border border-white/5 text-center">
+        <div className="mt-24 p-12 rounded-[3rem] bg-linear-to-r from-green-900/20 to-transparent border border-white/5 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to break ground?</h2>
           <Link
             to="/#ContactUs"
