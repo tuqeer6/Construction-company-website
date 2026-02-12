@@ -8,7 +8,19 @@ import { Link } from "react-router-dom";
  */
 const ServiceCard = ({ service }) => {
   const Icon = service.icon;
-  const isConstruction = service.category === "construction";
+
+  let linkPath = null;
+  if (service.category === "construction") {
+    linkPath = "/services/construction";
+  } else if (service.category === "architecture") {
+    linkPath = "/services/architecture";
+  }
+  else if(service.category === "renovation"){
+    linkPath="/services/renovation";
+  }
+  else if(service.category === "interior"){
+    linkPath="/services/interior";
+  }
 
   return (
     <div className="group flex-1 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-xl transition-all duration-500 hover:shadow-green-500/10 hover:border-green-500/30">
@@ -26,9 +38,9 @@ const ServiceCard = ({ service }) => {
         {service.description}
       </p>
 
-      {isConstruction ? (
+      {linkPath ? (
         <Link
-          to="/services/construction"
+          to={linkPath}
           className="relative overflow-hidden px-6 py-2.5 rounded-full bg-green-600 text-white text-sm font-medium transition-all hover:bg-green-500 hover:shadow-lg hover:shadow-green-500/20 active:scale-95 inline-block"
         >
           Explore Service

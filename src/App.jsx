@@ -11,6 +11,9 @@ import Testimonials from "./components/Testimonials";
 
 import { Routes, Route, useLocation } from "react-router-dom";
 import ConstructionService from "./pages/ConstructionService";
+import ArchitectureService from "./pages/ArchitectureService";
+import RenovationService from "./pages/RenovationService";
+import InteriorService from "./pages/InteriorService";
 
 const HomePage = () => {
   const location = useLocation();
@@ -50,8 +53,12 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/services/:serviceType" element={<ConstructionService />} />
+        <Route path="/services/construction" element={<ConstructionService />} />
+        <Route path="/services/architecture" element={<ArchitectureService />} />
+         <Route path="/services/renovation" element={<RenovationService/>} />
+          <Route path="/services/interior" element={<InteriorService/>} />
       </Routes>
+      
 
       <Footer />
     </div>

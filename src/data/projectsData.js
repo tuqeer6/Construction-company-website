@@ -1,8 +1,3 @@
-// import archi from "../assets/arc.jpg";
-// import cons from "../assets/cons.jpg";
-// import interior from "../assets/inter.jpg";
-// import renovation from "../assets/reno.jpg";
-
 import {
   Building2,
   DraftingCompass,
