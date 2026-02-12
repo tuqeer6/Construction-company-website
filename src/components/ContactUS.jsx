@@ -124,7 +124,7 @@ const ContactUS = () => {
                       type="text"
                       value={first}
                       onChange={(e) => setFirst(e.target.value)}
-                      placeholder="John"
+                      placeholder="first name"
                       className="w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-green-500 transition-all placeholder:text-gray-500"
                     />
                   </div>
@@ -137,7 +137,7 @@ const ContactUS = () => {
                       type="text"
                       value={last}
                       onChange={(e) => setLast(e.target.value)}
-                      placeholder="Doe"
+                      placeholder="last name"
                       className="w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-green-500 transition-all placeholder:text-gray-500"
                     />
                   </div>

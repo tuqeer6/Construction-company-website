@@ -75,7 +75,7 @@ const Projects = () => {
                   </span>
                 </div>
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
               </div>
 
               {/* Content Section */}

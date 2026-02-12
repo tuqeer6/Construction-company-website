@@ -21,7 +21,7 @@ const CEOMessage = () => {
                 className="w-full h-auto object-cover  transition-all duration-700" 
               />
               {/* Overlay for depth */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-40" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-transparent to-transparent opacity-40" />
             </div>
             
             {/* Decorative Frame Element */}
