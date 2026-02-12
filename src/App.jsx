@@ -14,8 +14,9 @@ const App = () => {
     <div className=' bg-emerald-900 text-white overflow-hidden'>
       <Header/>
       <Hero/>
-      <Projects/>
       <AboutUs/>
+      <Projects/>
+      
        <CostCalculator/>
       <CEOMessage/>
      

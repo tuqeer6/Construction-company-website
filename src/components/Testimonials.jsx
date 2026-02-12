@@ -1,7 +1,9 @@
+import React from "react";
 import t1 from "../assets/t1.jpg";
 import t2 from "../assets/t2.jpg";
 import t3 from "../assets/t3.jpg";
 import CountUp from "react-countup";
+import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -10,6 +12,7 @@ const testimonials = [
     image: t1,
     content:
       "M/s Pir Badshah & Co transformed our dream home into reality. Their construction team was professional, timely, and meticulous with every detail.",
+    stars: 5,
   },
   {
     name: "Sara Ali",
@@ -17,88 +20,104 @@ const testimonials = [
     image: t3,
     content:
       "The interior design services were exceptional. Every room reflects elegance and comfort, perfectly matching our vision and style.",
+    stars: 5,
   },
   {
     name: "Omar Farooq",
     role: "Business Owner",
     image: t2,
     content:
-      "Their renovation services brought new life to our office space. The team worked efficiently and exceeded our expectations with modern design solutions.",
+      "Their renovation services brought new life to our office space. The team worked efficiently and exceeded our expectations with modern solutions.",
+    stars: 5,
   },
 ];
 
 const Testimonials = () => {
   return (
-    <section
-      className="py-16 sm:py-20 px-10 sm:px-6 lg:px-8 relative bg-gray-900/30 text-gray-200"
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-start gap-8 sm:gap-12 lg:gap-16">
-          {/* Left side header */}
-          <div className="lg:w-1/2 w-full text-center lg:text-left">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-green-400">
-              What our clients are saying
-            </h2>
-            <p className="text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
-              From home construction to interior design and renovation projects, we
-              strive to deliver exceptional quality, aesthetics, and professionalism
-              in every project.
-            </p>
+    <section className="relative py-24 px-6 lg:px-20  overflow-hidden">
+      {/* Background Decorative Glow */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none" />
+      <div className="absolute -top-24 -right-24 w-96 h-96 bg-green-500/5 blur-[120px] rounded-full" />
 
-            {/* Animated Stats */}
-            <div className="mt-10 md:mt-30 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center lg:text-left">
-              {/* Projects */}
-              <div className="stat-card delay-0">
-                <h3 className="text-4xl font-bold text-green-400">
-                  <CountUp end={1000} duration={2} suffix="+" />
-                </h3>
-                <div className="stat-line"></div>
-                <p className="text-gray-300 mt-1">Projects Completed</p>
-              </div>
-              {/* Clients */}
-              <div className="stat-card delay-200">
-                <h3 className="text-4xl font-bold text-green-400">
-                  <CountUp end={900} duration={2} suffix="+" />
-                </h3>
-                <div className="stat-line"></div>
-                <p className="text-gray-300 mt-1">Satisfied Customers</p>
-              </div>
-              {/* Experience */}
-              <div className="stat-card delay-400">
-                <h3 className="text-4xl font-bold text-green-400">
-                  <CountUp end={40} duration={2} suffix="+" />
-                </h3>
-                <div className="stat-line"></div>
-                <p className="text-gray-300 mt-1">Years Experience</p>
-              </div>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="flex flex-col lg:flex-row items-start gap-16">
+          
+          {/* LEFT SIDE: Header & Animated Stats */}
+          <div className="lg:w-5/12 w-full">
+            <header className="space-y-4 mb-12">
+              <h2 className="text-sm uppercase tracking-[0.4em] text-green-500 font-semibold">
+                Testimonials
+              </h2>
+              <h1 className="text-4xl lg:text-6xl font-extrabold text-white leading-tight">
+                What our <span className="text-green-500">Clients</span> say
+              </h1>
+              <p className="text-gray-400 text-lg leading-relaxed max-w-md">
+                We strive to deliver exceptional quality and aesthetics in every project, 
+                from luxury homes to modern corporate spaces.
+              </p>
+            </header>
+
+            {/* Stats Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+              {[
+                { label: "Projects Completed", value: 1000 },
+                { label: "Satisfied Customers", value: 900 },
+                { label: "Years of Excellence", value: 40 },
+                { label: "City Presence", value: 15 },
+              ].map((stat, i) => (
+                <div key={i} className="group">
+                  <h3 className="text-4xl font-black text-white group-hover:text-green-500 transition-colors duration-300">
+                    <CountUp end={stat.value} duration={3} suffix="+" enableScrollSpy />
+                  </h3>
+                  <div className="w-8 h-1 bg-green-500 my-2 group-hover:w-16 transition-all duration-500" />
+                  <p className="text-gray-500 text-xs uppercase tracking-widest font-bold">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Right side testimonials */}
-          <div className="lg:w-1/2 w-full space-y-5">
-            {testimonials.map((testi, key) => (
+          {/* RIGHT SIDE: Testimonial Cards */}
+          <div className="lg:w-7/12 w-full space-y-5">
+            {testimonials.map((testi, idx) => (
               <div
-                key={key}
-                className="testimonial-card bg-white/5 p-6 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl shadow-lg"
+                key={idx}
+                className="relative group p-5 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl transition-all duration-500 hover:bg-white/8 hover:border-green-500/30"
               >
-                <div className="flex items-start gap-4 sm:gap-6">
-                  <div className="shrink-0 text-4xl font-bold bg-linear-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">
-                    “
+                {/* Decorative Quote Icon */}
+                <Quote className="absolute top-8 right-8 text-white/5 group-hover:text-green-500/10 transition-colors" size={60} />
+                
+                <div className="relative z-10">
+                  {/* Stars */}
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testi.stars)].map((_, i) => (
+                      <Star key={i} size={14} className="fill-green-500 text-green-500" />
+                    ))}
                   </div>
-                  <div className="grow">
-                    <p className="text-gray-200">{testi.content}</p>
-                    <div className="flex items-center gap-4 mt-4">
-                      <img
+
+                  <p className="text-gray-300 text-lg italic leading-relaxed mb-4">
+                    "{testi.content}"
+                  </p>
+
+                  <div className="flex items-center gap-5 pt-3 border-t border-white/5">
+                    <div className="relative">
+                        <img
                         src={testi.image}
                         alt={testi.name}
-                        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-green-400"
-                      />
-                      <div>
-                        <h3 className="font-semibold text-green-400 hover:text-cyan-400 transition-all duration-300">
-                          {testi.name}
-                        </h3>
-                        <h4 className="text-gray-400 text-sm">{testi.role}</h4>
-                      </div>
+                        className="w-14 h-14 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 border-2 border-white/10"
+                        />
+                        <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-600 rounded-full border-2 border-[#0a0a0a] flex items-center justify-center">
+                            <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                        </div>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-white text-lg">
+                        {testi.name}
+                      </h3>
+                      <p className="text-green-500 text-xs uppercase tracking-widest font-semibold">
+                        {testi.role}
+                      </p>
                     </div>
                   </div>
                 </div>

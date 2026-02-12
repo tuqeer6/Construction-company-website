@@ -1,7 +1,14 @@
-import archi from "../assets/arc.jpg";
-import cons from "../assets/cons.jpg";
-import interior from "../assets/inter.jpg";
-import renovation from "../assets/reno.jpg";
+// import archi from "../assets/arc.jpg";
+// import cons from "../assets/cons.jpg";
+// import interior from "../assets/inter.jpg";
+// import renovation from "../assets/reno.jpg";
+
+import {
+  Building2,
+  DraftingCompass,
+  Hammer,
+  Sofa,
+} from "lucide-react";
 
 export const projectsDataa = [
   {
@@ -105,33 +112,40 @@ export const projectsDataa = [
 ];
 
 
+
+
 export const aboutUsData = [
   {
     id: 1,
     title: "Construction Services",
-    description: "From residential homes to commercial complexes, our construction team ensures that every project is executed with precision, quality, and efficiency. We use modern construction techniques and high-quality materials to ensure durable and long-lasting results.",
+    description:
+      "From homes to commercial buildings, we deliver quality construction on time and within budget, ensuring durability and modern standards.",
     category: "construction",
-    image: cons
+    icon: Building2,
   },
   {
     id: 2,
     title: "Architecture Designing",
-    description: "Our architecture team brings visionary designs to life, blending creativity with functionality. We create spaces that are not only visually appealing but also safe, efficient, and compliant with local building codes. Every design is tailored to meet the client’s unique requirements and lifestyle.",
+    description:
+      "Our architects create functional and stylish designs tailored to your vision, combining creativity with practicality.",
     category: "architecture",
-    image: archi
+    icon: DraftingCompass,
   },
   {
     id: 3,
     title: "Renovation Services",
-    description: "We specialize in remodeling and renovation projects that breathe new life into existing spaces. From upgrading homes and offices to restoring heritage properties, our team focuses on maximizing space, style, and efficiency to create modern, functional environments.",
+    description:
+      "We transform spaces with remodeling and renovation, enhancing aesthetics, functionality, and property value.",
     category: "renovation",
-    image: renovation
+    icon: Hammer,
   },
   {
     id: 4,
     title: "Interior Designing",
-    description: "Our interior designers craft spaces that reflect elegance, comfort, and personal style. From furniture selection and color palettes to lighting and layout planning, we ensure every detail contributes to a cohesive and inspiring environment for our clients.",
+    description:
+      "Our designers craft inviting interiors with the perfect blend of style, comfort, and functionality.",
     category: "interior",
-    image: interior
-  }
+    icon: Sofa,
+  },
 ];
+
