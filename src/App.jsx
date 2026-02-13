@@ -15,6 +15,7 @@ import ArchitectureService from "./pages/ArchitectureService";
 import RenovationService from "./pages/RenovationService";
 import InteriorService from "./pages/InteriorService";
 import ServicesPage from "./pages/ServicesPage";
+import ProjectDetail from "./pages/ProjectDetail";
 
 const HomePage = () => {
   const location = useLocation();
@@ -59,6 +60,9 @@ const App = () => {
          <Route path="/services/renovation" element={<RenovationService/>} />
           <Route path="/services/interior" element={<InteriorService/>} />
            <Route path="/services" element={<ServicesPage/>} />
+
+           <Route path="/projects/:id" element={<ProjectDetail />} />
+           
       </Routes>
       
 

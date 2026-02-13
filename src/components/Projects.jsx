@@ -1,10 +1,11 @@
 import { useState, useMemo } from "react";
 import { projectsDataa } from "../data/projectsData";
+import { useNavigate } from "react-router-dom";
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("All");
   const tabs = ["All", "Ongoing", "Completed", "Sold"];
-
+const navigate=useNavigate()
   // Memoize filtered data for performance
   const filteredProjects = useMemo(() => {
     const normalizedTab = activeTab.toLowerCase();
@@ -96,7 +97,8 @@ const Projects = () => {
 
                 {/* Decorative architectural line */}
                 <div className="pt-4 border-t border-white/5">
-                    <button className="text-xs font-semibold text-white uppercase tracking-widest flex items-center gap-2 hover:text-green-400 transition-colors">
+                    <button   onClick={() => navigate(`/projects/${project.id}`)} 
+                    className="text-xs font-semibold text-white uppercase tracking-widest flex items-center gap-2 hover:text-green-400 transition-colors">
                         View Details 
                         <span className="text-lg">→</span>
                     </button>

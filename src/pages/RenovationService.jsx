@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import {
   ArrowLeft,
   RotateCcw,
-  Hammer,
+ 
   Zap,
   Droplets,
   Paintbrush,
@@ -103,7 +103,7 @@ const RenovationService = () => {
                 key={index}
                 className="p-8 bg-white/5 border border-white/10 rounded-3xl hover:border-green-500/40 transition-all group"
               >
-                <div className="w-12 h-12 rounded-2xl bg-green-500/10 flex items-center justify-center mb-6 group-hover:bg-green-500 transition-colors">
+                <div className="w-12 h-12 rounded-2xl bg-green-500/10 flex items-center justify-center mb-6  group-hover:scale-110 transition-transform">
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-3">{item.title}</h3>
